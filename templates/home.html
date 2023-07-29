@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}All the CookieStands - Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="space-y-8">
+
+  <h2 class="text-4xl">Hi {{ user.username }}!</h2>
+  <p>Maybe one day you'll see a glorious home page here.</p>
+  <p>But for now just notice that List and Create are in Nav bar.</p>
+</div>
+
+{% else %}
+
+<div class="">
+  <div class="hero-content flex bg-red-300 p-4 space-x-4">
+    <!-- <img src="{% static '' %}" class="max-w-sm rounded-lg shadow-2xl" /> -->
+    <div class="bg-green-300 p-4">
+      <h1 class="text-5xl font-bold">CookieStands</h1>
+      <p class="text-2xl p-6">Welcome to Salmon Cookies! I am Pat. An evil mastermind at making students suffer. Please login and use this site as you wish. Do my bidding as a sales associate and sell my terrible cookies FOREVER. MUAHAHAHA!</p>
+      <a href="{% url 'login' %}"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Get
+        Started</a>
+    </div>
+  </div>
+</div>
+
+{% endif %}
+{% endblock %}

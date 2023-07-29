@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div
+  class="w-3/4 mx-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  <div class="flex justify-end px-4 pt-4">
+    <button id="dropdownButton" data-dropdown-toggle="dropdown"
+      class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
+      type="button">
+      <span class="sr-only">Open dropdown</span>
+      <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path>
+      </svg>
+    </button>
+    <!-- Dropdown menu -->
+    <div id="dropdown"
+      class="z-10 hidden text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+      <ul class="py-2" aria-labelledby="dropdownButton">
+        <li>
+          <a href="#"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit</a>
+        </li>
+        <li>
+          <a href="#"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Export
+            Data</a>
+        </li>
+        <li>
+          <a href="#"
+            class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="flex flex-col items-center pb-10 px-4">
+    <img class="w-96 h-96 mb-3 rounded-full shadow-lg" src="data:image/jpeg;base64,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" alt="You image" />
+    <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">This should be you</h5>
+    <span class="text-sm text-gray-500 dark:text-gray-400">Python Developer</span>
+    <div class="flex mt-4 space-x-3 md:mt-6">
+      <a href="#"
+        class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+        friend</a>
+      <a href="#"
+        class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Message</a>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
