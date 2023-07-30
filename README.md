@@ -11,7 +11,7 @@
 
 - password: admin
 
-## Customization Steps for using template
+## Customization Steps for using **template**
 
 - DO NOT migrate yet
 - add additional dependencies as needed
@@ -44,4 +44,3 @@
 ## Database
 
 **NOTE:** If you are using Postgres instead of SQLite then make sure to install `psycopg2-binary` and include in `requirements.txt`
-
